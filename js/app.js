@@ -7,7 +7,7 @@
  */
 
 // The names and URLs to all of the feeds we'd like available.
-const allFeeds = [
+var allFeeds = [
     {
         name: 'Udacity Blog',
         url: 'http://blog.udacity.com/feed'
@@ -41,7 +41,7 @@ function init() {
  * which will be called after everything has run successfully.
  */
  function loadFeed(id, cb) {
-     const feedUrl = allFeeds[id].url,
+     var feedUrl = allFeeds[id].url,
          feedName = allFeeds[id].name;
 
      $.ajax({
@@ -93,7 +93,7 @@ google.setOnLoadCallback(init);
  * until the DOM is ready.
  */
 $(function() {
-    const container = $('.feed'),
+    var container = $('.feed'),
         feedList = $('.feed-list'),
         feedItemTemplate = Handlebars.compile($('.tpl-feed-list-item').html()),
         feedId = 0,
@@ -117,7 +117,7 @@ $(function() {
      * (following the link) from occurring.
      */
     feedList.on('click', 'a', function() {
-        let item = $(this);
+        var item = $(this);
 
         $('body').addClass('menu-hidden');
         loadFeed(item.data('id'));
