@@ -53,19 +53,28 @@ $(function() {
      * the hamburger icon is clicked.
      */
      it('should be hidden by default', function(){
-       const body = document.body;
-       expect(body.classList.contains('menu-hidden')).toBe(true);
+       expect(document.body.classList.contains('menu-hidden')).toBe(true);
      });
 
-    /* TODO: Write a test that ensures the menu changes
+    /* This test ensures the menu changes
      * visibility when the menu icon is clicked. This test
      * should have two expectations: does the menu display when
      * clicked and does it hide when clicked again.
      */
-     
+     it('should toggle on and off', function(){
+
+       // menu is shown on when hamburger is clicked
+       $('.menu-icon-link').click();
+       expect(document.body.classList.contains('menu-hidden')).toBe(false);
+
+       // menu is hidden when hamburger is clicked again
+        $('.menu-icon-link').click();
+        expect(document.body.classList.contains('menu-hidden')).toBe(true);
+
+      });
   });
 
-  /* TODO: Write a new test suite named "Initial Entries" */
+
   describe('Initial entries', function() {
     /* TODO: Write a test that ensures when the loadFeed
      * function is called and completes its work, there is at least
@@ -76,7 +85,7 @@ $(function() {
   });
 
 
-  /* TODO: Write a new test suite named "New Feed Selection" */
+  /
   describe('New Feed Selection', function(){
     /* TODO: Write a test that ensures when a new feed is loaded
      * by the loadFeed function that the content actually changes.
