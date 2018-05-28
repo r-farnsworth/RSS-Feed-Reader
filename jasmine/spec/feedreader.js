@@ -24,8 +24,8 @@ $(function() {
     });
 
 
-    /* TODO: Write a test that loops through each feed
-     * in the allFeeds object and ensures it has a URL defined
+    /* This test loops through each feed
+     * in the allFeeds object and ensures a URL is defined
      * and that the URL is not empty. COMPLETE 28/5/18
      */
     beforeEach(function() {
@@ -34,7 +34,7 @@ $(function() {
     });
 
 
-    /* TODO: Write a test that loops through each feed
+    /* This test loops through each feed
      * in the allFeeds object and ensures it has a name defined
      * and that the name is not empty. COMPLETE 28/5/18
      */
@@ -46,19 +46,23 @@ $(function() {
   });
 
 
-  /* TODO: Write a new test suite named "The menu"  COMPLETE 28/5/18 */
+
   describe('The menu', function() {
-    /* TODO: Write a test that ensures the menu element is
-     * hidden by default. You'll have to analyze the HTML and
-     * the CSS to determine how we're performing the
-     * hiding/showing of the menu element.
+    /* Test that ensures the menu element is
+     * hidden by default. A class is applied to the body and removed when
+     * the hamburger icon is clicked.
      */
+     it('should be hidden by default', function(){
+       const body = document.body;
+       expect(body.classList.contains('menu-hidden')).toBe(true);
+     });
 
     /* TODO: Write a test that ensures the menu changes
      * visibility when the menu icon is clicked. This test
      * should have two expectations: does the menu display when
      * clicked and does it hide when clicked again.
      */
+     
   });
 
   /* TODO: Write a new test suite named "Initial Entries" */
