@@ -53,7 +53,7 @@ $(function() {
          * the hamburger icon is clicked.
          */
         it('should be hidden by default', function() {
-          expect(document.body.classList.contains('menu-hidden')).toBe(true);
+          expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
         /* This test ensures the menu changes
@@ -65,11 +65,11 @@ $(function() {
 
           // menu is shown on when hamburger is clicked
           $('.menu-icon-link').click();
-          expect(document.body.classList.contains('menu-hidden')).toBe(false);
+          expect($('body').hasClass('menu-hidden')).toBe(false);
 
           // menu is hidden when hamburger is clicked again
           $('.menu-icon-link').click();
-          expect(document.body.classList.contains('menu-hidden')).toBe(true);
+          expect($('body').hasClass('menu-hidden')).toBe(true);
 
         });
       });
@@ -80,19 +80,15 @@ $(function() {
          * beforeEach is necessary as we don't want the expectation to be tested before the feed has had a chance to load.
          */
 
-        let entries;
-
         beforeEach(function(done) {
-          loadFeed(0, done());
+          loadFeed(0, done);
         });
 
-        it('has at least one entry in the feed', function(done) {
-          entries = document.getElementsByClassName('entry').length;
-          expect(entries.length).not.toBe(0);
+        it('has at least one entry in the feed', function() {
+          expect($(".feed .entry").length).toBeGreaterThan(0);
           done();
         });
       });
-
 
 
 
@@ -101,6 +97,7 @@ $(function() {
         // the content is changed as expected.
 
         let previousFeed;
+        let newFeed;
 
 
         // don't start test until content is loaded
@@ -108,21 +105,20 @@ $(function() {
             // Load the first feed
             loadFeed(0, function() {
                 // Store the HTML content into previousFeed variable
-                previousFeed = document.querySelector('.feed').innerHTML;
+                previousFeed = ($('.feed').html());
                 // now load the next feed
-                loadFeed(1, done)
+                loadFeed(1, function(){
+                    newFeed = ($('.feed').html());
+                    done();
+                });
             });
-            done();
         });
 
         //compare content of previousFeed and current feed
        it('correctly loads content of new feed', function() {
-            expect(previousFeed).not.toEqual(document.querySelector('.feed').innerHTML);
+            expect(previousFeed).not.toEqual(newFeed);
         });
     });
-
-
-
 
 
 
