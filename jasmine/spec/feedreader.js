@@ -52,45 +52,65 @@ $(function() {
      * hidden by default. A class is applied to the body and removed when
      * the hamburger icon is clicked.
      */
-     it('should be hidden by default', function(){
-       expect(document.body.classList.contains('menu-hidden')).toBe(true);
-     });
+    it('should be hidden by default', function() {
+      expect(document.body.classList.contains('menu-hidden')).toBe(true);
+    });
 
     /* This test ensures the menu changes
      * visibility when the menu icon is clicked. This test
      * should have two expectations: does the menu display when
      * clicked and does it hide when clicked again.
      */
-     it('should toggle on and off', function(){
+    it('should toggle on and off', function() {
 
-       // menu is shown on when hamburger is clicked
-       $('.menu-icon-link').click();
-       expect(document.body.classList.contains('menu-hidden')).toBe(false);
+      // menu is shown on when hamburger is clicked
+      $('.menu-icon-link').click();
+      expect(document.body.classList.contains('menu-hidden')).toBe(false);
 
-       // menu is hidden when hamburger is clicked again
-        $('.menu-icon-link').click();
-        expect(document.body.classList.contains('menu-hidden')).toBe(true);
+      // menu is hidden when hamburger is clicked again
+      $('.menu-icon-link').click();
+      expect(document.body.classList.contains('menu-hidden')).toBe(true);
 
+    });
+  });
+
+
+  describe('Initial entries', function(){
+    /* this test ensures that there is at least one entry in the RSS feed when loaded.
+    * beforeEach is necessary as we don't want the expectation to be tested before the feed has had a chance to load.
+    */
+
+      let entries;
+
+      beforeEach(function(done){
+          loadFeed(0, done());
+      });
+
+      it('has at least one entry in the feed', function(done){
+        entries = document.getElementsByClassName('entry').length;
+        expect($('.feed').length).toBe(1);
+        done();
       });
   });
 
 
-  describe('Initial entries', function() {
-    /* TODO: Write a test that ensures when the loadFeed
-     * function is called and completes its work, there is at least
-     * a single .entry element within the .feed container.
-     * Remember, loadFeed() is asynchronous so this test will require
-     * the use of Jasmine's beforeEach and asynchronous done() function.
-     */
-  });
 
 
-  /
-  describe('New Feed Selection', function(){
-    /* TODO: Write a test that ensures when a new feed is loaded
+
+  describe('New Feed Selection', function() {
+    /* This test ensures that when a new feed is loaded
      * by the loadFeed function that the content actually changes.
      * Remember, loadFeed() is asynchronous.
      */
+
   });
+
+
+
+
+
+
+
+
 
 }());
