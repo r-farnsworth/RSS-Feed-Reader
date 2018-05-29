@@ -2,6 +2,10 @@
 
 I was given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, since they included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and I was left with an application with an incomplete test suite.
 
+## How to run
+* Download/clone this repo
+* Open `index.html` in your preferred browser
+
 
 ## Skills used
 * Jasmine
