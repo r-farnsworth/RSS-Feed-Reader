@@ -97,6 +97,9 @@ $(function() {
 
 
       describe('New Feed Selection', function() {
+        // this test checks that when a new feed is selected,
+        // the content is changed as expected.
+
         let previousFeed;
 
 

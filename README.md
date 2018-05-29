@@ -1,29 +1,33 @@
 # Project Overview
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+I was given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, since they included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and I was left with an application with an incomplete test suite.
 
 
-## Why this Project?
+## Skills used
+* Jasmine
+* JavaScript/ES6
+* HTML/CSS
+* Version control (git)
 
-Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
+## Suites used
 
-Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
+### RSS feeds
+Checks that the allFeeds variable has been defined and that the feed is not empty.
+
+### The menu
+Ensures that the menu changes visibility when the hamburger is clicked; it should be displayed when the hamburger is initially clicked and hidden on a second click.
+
+### Initial Entries
+Checks that there is at least one entry in the RSS feed on load (this uses asynchronicity)
+
+### New Feed Selection
+Checks that when a new feed is selected, the content changes appropriately.
 
 
-## What will I learn?
 
-You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
+# Steps taken to complete this project
 
-
-## How will this help my career?
-
-* Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
-* Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
-
-
-# How will I complete this project?
-
-Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
+I reviewed the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
 
 1. Take the JavaScript Testing [course](https://www.udacity.com/course/ud549)
 2. Download the [required project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
@@ -44,5 +48,5 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 17. No test should be dependent on the results of another.
 18. Callbacks should be used to ensure that feeds are loaded before they are tested.
 19. Implement error handling for undefined variables and out-of-bound array access.
-20. When complete - all of your tests should pass. 
+20. When complete - all of your tests should pass.
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
